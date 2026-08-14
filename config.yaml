@@ -1,5 +1,5 @@
-model: gemini/gemini-3.5-flash-lite
-fallback_model: bg/meta/llama-3.1-8b-instruct
+model: Hunter
+fallback_model: bg/deepseek-v4-flash
 providers:
   openai:
     base_url: https://9router-production-fd5f.up.railway.app/v1
