@@ -11,7 +11,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"Hermes Agent is running!")
+        self.wfile.write(b"Hermes Agent is running on Render!")
 
 def run_server():
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
@@ -19,6 +19,7 @@ def run_server():
         httpd.serve_forever()
 
 def run_gateway():
+    print("Starting hermes gateway...")
     subprocess.run(["hermes", "gateway"])
 
 if __name__ == "__main__":
