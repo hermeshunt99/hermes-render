@@ -11,6 +11,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 
 RUN pip install --no-cache-dir hermes-agent
 
+COPY server.py .
+
 EXPOSE 7860
 
-CMD ["hermes", "gateway"]
+CMD ["python3", "server.py"]
