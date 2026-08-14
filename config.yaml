@@ -1,14 +1,20 @@
-model: Hunter
-fallback_model: bg/deepseek-v4-flash
-providers:
-  openai:
-    base_url: https://9router-production-fd5f.up.railway.app/v1
-    api_key: sk-0c3d489f704fca8e-h9fpuk-ab893c03
-gateway:
-  platforms:
-    telegram:
-      enabled: true
-      bot_token: 8273428039:AAFNeAXw9zoklXQ4Z08Exd0Kjuz26IFqxN0
-  dm_policy: open
-  group_policy: open
-  allow_all_users: true
+terminal:
+  backend: local
+  cwd: /app
+  timeout: 180
+compression:
+  enabled: true
+  threshold: 0.85
+fallback_model:
+  provider: openai-compatible
+  model: Hunter
+  base_url: https://9router-production-fd5f.up.railway.app/v1
+  key_env: NINEROUTER_API_KEY
+platforms:
+  telegram:
+    enabled: true
+    home_channel:
+      platform: telegram
+      chat_id: "243531053"
+      name: Alireza
+      user_id: "243531053"
