@@ -1,14 +1,14 @@
-model: openai/gpt-4o-mini
+model: gemini/gemini-3.5-flash-lite
 fallback_model: openai/deepseek-v4-flash
 providers:
   openai:
     base_url: https://9router-production-fd5f.up.railway.app/v1
-    api_key: ${OPENAI_API_KEY}
+    api_key: sk-0c3d489f704fca8e-h9fpuk-ab893c03
 gateway:
   platforms:
     telegram:
       enabled: true
-      bot_token: ${TELEGRAM_BOT_TOKEN}
+      bot_token: 8273428039:AAFNeAXw9zoklXQ4Z08Exd0Kjuz26IFqxN0
   dm_policy: open
   group_policy: open
   allow_all_users: true
