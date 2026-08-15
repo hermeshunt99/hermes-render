@@ -1,3 +1,5 @@
+model: hermes
+provider: openai-compatible
 terminal:
   backend: local
   cwd: /app
