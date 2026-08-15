@@ -3,7 +3,7 @@ import socketserver
 import threading
 import subprocess
 import os
-import sys
+import shutil
 
 PORT = int(os.environ.get("PORT", 7860))
 
@@ -20,6 +20,13 @@ def run_server():
         httpd.serve_forever()
 
 def run_gateway():
+    # Ensure ~/.hermes directory exists and copy config.yaml there
+    hermes_dir = os.path.expanduser("~/.hermes")
+    os.makedirs(hermes_dir, exist_ok=True)
+    if os.path.exists("config.yaml"):
+        shutil.copy("config.yaml", os.path.join(hermes_dir, "config.yaml"))
+        print("Copied config.yaml to ~/.hermes/config.yaml")
+
     print("Starting hermes gateway process...")
     process = subprocess.Popen(
         ["hermes", "gateway"],
