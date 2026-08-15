@@ -8,7 +8,7 @@ compression:
 fallback_model:
   provider: openai-compatible
   model: hermes
-  base_url: https://ninerouter-server-6anx.onrender.com/v1
+  base_url: https://9router-production-fd5f.up.railway.app/v1
   key_env: NINEROUTER_API_KEY
 platforms:
   telegram:
