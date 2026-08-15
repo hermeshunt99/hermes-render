@@ -11,6 +11,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 
 RUN pip install --no-cache-dir hermes-agent
 
+# Create ~/.hermes directory and copy config
+RUN mkdir -p /root/.hermes
+COPY config.yaml /root/.hermes/config.yaml
 COPY server.py .
 
 EXPOSE 7860
